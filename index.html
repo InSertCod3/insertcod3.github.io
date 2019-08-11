@@ -8,6 +8,8 @@
     <title>Portfolio - InsertCod3 </title>
     <!-- jQuery (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <!-- Animate CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css" rel="stylesheet">
     <!-- Typed.js (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.10/lib/typed.min.js"></script>
     <!-- Bootstrap (CDN) -->
@@ -18,10 +20,115 @@
     <!-- Main CSS -->
     <link href="css/main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:600&display=swap" rel="stylesheet">
+    <!-- Preloader Screen Handle (CSS/JS) -->
+    <style>
+        /* Preloader */
+        .loading {
+            overflow: hidden;
+            margin-top: 0%;
+        }
+
+        #preloader {
+            height: 100vh;
+            width: 100vw;
+            display: block;
+            position: fixed;
+            z-index: 3;
+            background-color: #4A90E2;
+        }
+
+        #preloader h1 {
+            padding-top: 40vh
+        }
+
+        #preloader {
+            text-align: center
+        }
+
+        .lds-ellipsis {
+            display: inline-block;
+            position: relative;
+            width: 64px;
+            height: 64px;
+        }
+
+        .lds-ellipsis div {
+            position: absolute;
+            top: 27px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #fff;
+            animation-timing-function: cubic-bezier(0, 1, 1, 0);
+        }
+
+        .lds-ellipsis div:nth-child(1) {
+            left: 6px;
+            animation: lds-ellipsis1 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(2) {
+            left: 6px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(3) {
+            left: 26px;
+            animation: lds-ellipsis2 0.6s infinite;
+        }
+
+        .lds-ellipsis div:nth-child(4) {
+            left: 45px;
+            animation: lds-ellipsis3 0.6s infinite;
+        }
+
+        @keyframes lds-ellipsis1 {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes lds-ellipsis3 {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes lds-ellipsis2 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(19px, 0);
+            }
+        }
+    </style>
+    <script>
+        function fadeloader() {
+            $("#preloader").fadeOut("slow");
+            $(".wrapper").removeClass("loading").delay(5000);
+        }
+        $(window).on("load", function () {
+            window.setTimeout("fadeloader();", 5000)
+        });
+    </script>
 </head>
 
 <body>
-    <div class="wrapper">
+    <div id="preloader" >
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        <h1 style="font-family: 'Nunito', sans-serif; color: white;" class="animated shake">Hi. 👋</h1>
+    </div>
+    <div class="wrapper loading">
         <div class="container">
             <header>
                 <div class="row">
