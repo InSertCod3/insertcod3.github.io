@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Portfolio - InsertCod3 </title>
+    <!-- jQuery (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <!-- Bootstrap (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet">
+    <!-- Main CSS -->
+    <link href="css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <header>
+                <div class="row">
+                    <div class="navbar">
+                        <div class="navbar-header">
+                            <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                                <span class="sr-only">Toggle navigation</span>
+                            </button>
+                            <a class="navbar-brand" href="#">
+                                <span style="font-size: 24px;" class="brand-name"><i class="fa fa-github"></i> INSERTCOD3</span>
+                            </a>
+                            <span class="job-title">Software Engineer</span>
+                        </div>
+                        <div class="collapse navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="#">About</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Resume</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">Contact</a>
+                                </li>
+                            </ul>
+
+                            <ul class="nav navbar-nav social">
+                                <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-github"></i> </a> </li>
+                                <li><a href="#"> <i class="fa fa-linkedin"></i> </a></li>
+                                <li><a href="#"> <i class="fa fa-envelope"></i> </a></li>
+                            </ul>
+                        </div><!-- /.nav-collapse -->
+                    </div><!-- /.navbar -->
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <h1 class="intro" class="lead">Shamoy Baker.</h1>
+                        <h2 class="about-me-text" class="lead" style="width: 69.4%">Hello, my name is Shamoy Baker. I am a <highlight>Software&nbsp;Engineer </highlight>&&nbsp;<highlight>Product&nbsp;Designer</highlight>.</h2>
+                        <h2 class="about-me-skill-list" class="lead">
+                            <p>• UI/UX</p>
+                            <p>• Backend Developer</p>
+                            <p>• Product Designer</p>
+                            <p>• Web Designer</p>
+                        </h2>
+                    </div>
+                </div>
+            </header>
+
+            <div class="row grid-list-wrapper no-gutter-space" id="shots"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <nav class="nav-footer">
+                <ul>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Resume</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                    <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                    <li><a href="#"> <i class="fa fa-github"></i> </a> </li>
+                    <li><a href="#"> <i class="fa fa-linkedin"></i> </a></li>
+                    <li><a href="#"> <i class="fa fa-envelope"></i> </a></li>
+                </ul>
+
+                <p class="credits text-center">Made With ❤️ by, InsertCod3</p>
+            </nav>
+        </div>
+
+    </footer>
+    <script>
+
+            //Paste your Client Access Token in the line below within quotes - you can build your API from https://dribbble.com/account/applications 
+            var shots = [
+                {
+                    "html_url": "asdsds",
+                    "title": "ABCD",
+                    "images": {
+                        "normal":"img/python_snip_db_long.svg"
+                    }
+                },
+                {
+                    "html_url": "asdsds",
+                    "title": "ABCD",
+                    "images": {
+                        "normal":"https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406__340.jpg"
+                    }
+                },
+                {
+                    "html_url": "asdsds",
+                    "title": "ABCD",
+                    "images": {
+                        "normal":"https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406__340.jpg"
+                    }
+                },
+                {
+                    "html_url": "asdsds",
+                    "title": "ABCD",
+                    "images": {
+                        "normal":"https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406__340.jpg"
+                    }
+                }
+            ];
+            var html = []
+            shots.forEach(function(shot) {
+                console.log(shot)
+                html.push('<div class="col-sm-6 col-md-4 col-lg-4"> <div class="grid-list">');
+                html.push('<a href="' + shot.html_url + '" target="_blank">');
+                html.push('<img class="img-responsive" src="' + shot.images.normal + '" alt="' + shot.title + '"><\/a>');
+                html.push('<div class="overlay"><a target="_blank"  href="' + shot.html_url + '">');
+                html.push('<h2>' + shot.title + '<\/h2>');
+                html.push('<\/a> <\/div><\/div><\/div>');
+            });
+          
+            // $('#shots').html(html.join(''));
+
+    </script>
+</body>
+
+</html>
