@@ -176,9 +176,23 @@ display: inline-block}
     margin:0 0 3em
 }
 
+.grid-project-item {
+    margin: 2%;
+    width: 29%;
+    -webkit-box-shadow: 0px 0px 15px -4px rgba(170,169,169,1);
+    -moz-box-shadow: 0px 0px 15px -4px rgba(170,169,169,1);
+    box-shadow: 0px 0px 15px -4px rgba(170,169,169,1);
+    transition: opacity .2s ease-in-out;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 15px -1px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 0 15px -1px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 15px -1px rgba(0, 0, 0, .1);
+}
+
 .grid-list img {
     height:auto;
     max-width: 100%;
+    margin-top: 10%;
     transition: opacity .2s ease-in-out;
     border-radius: 5px;
     -webkit-box-shadow: 0 0 15px -1px rgba(0, 0, 0, .1);
@@ -306,18 +320,22 @@ footer {
  
 
 @media only screen and (min-width: 320px) {
-
+    .grid-project-item {
+        width: 90%;
+    }
 }
 
 @media only screen and (min-width: 480px) {
-
-}
-
-@media only screen and (min-width: 768px) {
-.overlay{
-min-height: 90px;
-}
     
+}
+
+/* Tablet Devices */
+@media only screen and (min-width: 768px) {
+
+    .grid-project-item {
+        width: 90%;
+    }
+
 header {
     background:#fff;
     margin:2em 15px;
@@ -342,6 +360,11 @@ background: #fff;}
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
+
+    .grid-project-item {
+        width: 29%;
+    }
+
 .overlay {
     font-size:120%
 }
