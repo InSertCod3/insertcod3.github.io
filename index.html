@@ -244,6 +244,7 @@
             var project_list = [
                 {
                     "title": "TwitterQuery",
+                    "card_attr": "md-size",
                     "message": "Query Twitter Api (Frontend/Backend)",
                     "description": "Constructed a web app that interacts with twitter’s API and executes user search queries containing keywords to present them on a paginated SPA (Single-page Application) using Vue.js.",
                     "links": {
@@ -256,6 +257,20 @@
                 },
                 {
                     "title": "Reactive Social Media (React.js Based)",
+                    "card_attr": "md-size",
+                    "message": "Social Media Web App",
+                    "description": "Allowed users to explore a concept Social Media app using Modern Technologies such a React.js",
+                    "links": {
+                        "hosted_url": "https://github.com/InSertCod3/Reactive-Social-Media",
+                        "source_code_repo": "https://github.com/InSertCod3/Reactive-Social-Media"
+                    },
+                    "images": {
+                        "normal":"https://raw.githubusercontent.com/InSertCod3/Reactive-Social-Media/master/screenshots/0.png"
+                    }
+                },
+                {
+                    "title": "Reactive Social Media (React.js Based)",
+                    "card_attr": "md-size",
                     "message": "Social Media Web App",
                     "description": "Allowed users to explore a concept Social Media app using Modern Technologies such a React.js",
                     "links": {
@@ -268,6 +283,7 @@
                 },
                 {
                     "title": "React Native Cooking App",
+                    "card_attr": "",
                     "message": "React Native Cooking App Design Mock-up",
                     "description": "Designed a app in React Native that enables user to visualize cooking resipes.",
                     "links": {
@@ -280,6 +296,7 @@
                 },
                 {
                     "title": "React Native Patients",
+                    "card_attr": "",
                     "message": "React Native Patients Management App Design Mock-up",
                     "description": "Designed a app in React Native that help medical professinals manage there patients more effiently.",
                     "links": {
@@ -292,6 +309,7 @@
                 },
                 {
                     "title": "React Native Cooking App",
+                    "card_attr": "",
                     "message": "React Native Cooking App Design Mock-up",
                     "description": "Designed a app in React Native that enables user to visualize cooking resipes.",
                     "links": {
@@ -304,7 +322,7 @@
                 },
             ];
             project_list.forEach(function(shot) {
-                tplate = `<div class="col-sm-6 col-md-4 col-lg-4 grid-project-item">
+                tplate = `<div class="col-sm-6 col-md-4 col-lg-4 grid-project-item ${shot.card_attr}">
                     <div class="grid-list"><a href="${shot.links.hosted_url}" target="_blank">
                         <img class="img-responsive" src="${shot.images.normal}" alt="ABCD">
                         <div class="overlay">
