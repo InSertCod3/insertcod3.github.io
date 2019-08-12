@@ -137,7 +137,7 @@
                             <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
                                 <span class="sr-only">Toggle navigation</span>
                             </button>
-                            <a class="navbar-brand" href="#">
+                            <a class="navbar-brand" href="https://github.com/InSertCod3">
                                 <span style="font-size: 24px;" class="brand-name"><i class="fa fa-github"></i> INSERTCOD3</span>
                             </a>
                             <span class="job-title">Software Engineer</span>
@@ -179,21 +179,23 @@
                     </div>
                 </div>
             </header>
-            <div class="row justify-content-center grid-list-wrapper" id="shots">
+            <div class="row justify-content-center grid-list-wrapper" id="projects">
+                <!-- Item Template
                 <div class="col-sm-6 col-md-4 col-lg-4 grid-project-item">
-                    <div class="grid-list"><a href="asdsds" target="_blank">
+                    <div class="grid-list"><a href="https://twitterquery-c6rnmqev2q-ue.a.run.app/" target="_blank">
                         <img class="img-responsive" src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406__340.jpg" alt="ABCD">
                         <div class="overlay">
                             <h2 class="card-title">TwitterQuery</h2>
                             <h3>Query Twitter Api (Frontend/Backend)</h3>
                             <h4>Constructed a web app that interacts with twitter’s API and executes user
-                                    search queries containing keywords to present them on a paginated SPA
-                                    (Single-page Application) using Vue.js.</h4>
-                            <a><h3 class="trunc"><i class="fa fa-link"></i> https://twitterquery-c6rnmqev2q-ue.a.run.app/</h3></a>
-                            <a><h3 class="trunc"><i class="fa fa-code"></i> https://github.com/InSertCod3/TwitterQuery/</h3></a>
+                                search queries containing keywords to present them on a paginated SPA
+                                (Single-page Application) using Vue.js.</h4>
+                            <a href="https://twitterquery-c6rnmqev2q-ue.a.run.app/"><h3 class="trunc"><i class="fa fa-link"></i> Website</h3></a>
+                            <a href="https://github.com/InSertCod3/TwitterQuery/"><h3 class="trunc"><i class="fa fa-code"></i> Source Code</h3></a>
                         </div>
                     </div>
                 </div>
+                -->
             </div>
         </div>
     </div>
@@ -228,7 +230,6 @@
     </footer>
     <script>
             /* Handle Typed.js */
-            
             var typed = new Typed('#skill-title-0', {
                 strings: ["Backend&nbsp;Developer ", "Frontend&nbsp;Developer ", "Creator "],
                 typeSpeed: 50,
@@ -240,49 +241,36 @@
             });
 
             //Paste your Client Access Token in the line below within quotes - you can build your API from https://dribbble.com/account/applications 
-            var shots = [
+            var project_list = [
                 {
-                    "html_url": "asdsds",
-                    "title": "ABCD",
+                    "title": "TwitterQuery",
+                    "message": "Query Twitter Api (Frontend/Backend)",
+                    "description": "Constructed a web app that interacts with twitter’s API and executes user search queries containing keywords to present them on a paginated SPA (Single-page Application) using Vue.js.",
+                    "links": {
+                        "hosted_url": "https://twitterquery-c6rnmqev2q-ue.a.run.app/",
+                        "source_code_repo": "https://github.com/InSertCod3/TwitterQuery/"
+                    },
                     "images": {
-                        "normal":"img/python_snip_db_long.svg"
-                    }
-                },
-                {
-                    "html_url": "asdsds",
-                    "title": "ABCD",
-                    "images": {
-                        "normal":"https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406__340.jpg"
-                    }
-                },
-                {
-                    "html_url": "asdsds",
-                    "title": "ABCD",
-                    "images": {
-                        "normal":"https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406__340.jpg"
-                    }
-                },
-                {
-                    "html_url": "asdsds",
-                    "title": "ABCD",
-                    "images": {
-                        "normal":"https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406__340.jpg"
+                        "normal":"https://raw.githubusercontent.com/InSertCod3/TwitterQuery/master/screenshots/0.PNG"
                     }
                 }
             ];
-            var html = []
-            shots.forEach(function(shot) {
-                console.log(shot)
-                html.push('<div class="col-sm-6 col-md-4 col-lg-4"> <div class="grid-list">');
-                html.push('<a href="' + shot.html_url + '" target="_blank">');
-                html.push('<img class="img-responsive" src="' + shot.images.normal + '" alt="' + shot.title + '"><\/a>');
-                html.push('<div class="overlay"><a target="_blank"  href="' + shot.html_url + '">');
-                html.push('<h2>' + shot.title + '<\/h2>');
-                html.push('<\/a> <\/div><\/div><\/div>');
+            project_list.forEach(function(shot) {
+                tplate = `<div class="col-sm-6 col-md-4 col-lg-4 grid-project-item">
+                    <div class="grid-list"><a href="${shot.links.hosted_url}" target="_blank">
+                        <img class="img-responsive" src="${shot.images.normal}" alt="ABCD">
+                        <div class="overlay">
+                            <h2 class="card-title">${shot.title}</h2>
+                            <h3>${shot.message}</h3>
+                            <h4>${shot.description}</h4>
+                            <a href="${shot.links.hosted_url}"><h3 class="trunc"><i class="fa fa-link"></i> Website</h3></a>
+                            <a href="${shot.links.source_code_repo}"><h3 class="trunc"><i class="fa fa-code"></i> Source Code</h3></a>
+                        </div>
+                    </div>
+                </div>`
+                $('#projects').append(tplate)
             });
           
-            // $('#shots').html(html.join(''));
-
     </script>
 </body>
 
