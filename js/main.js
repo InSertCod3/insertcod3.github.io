@@ -11,5 +11,16 @@ function greeting(version=01){
 
 // A $( document ).ready() block.
 $(function() {
+    // Activate Console
     greeting();
+
+    // Activate Toogle Switch
+    $('.toggle-switch').click(function() {
+        if ($(this).hasClass('active')){
+            $(this).removeClass('active');
+        } else {
+            $(this).addClass('active');
+        }
+      });
 });
+
