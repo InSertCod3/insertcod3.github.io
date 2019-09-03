@@ -39,7 +39,7 @@ body {
 }
 
 .toggle-switch.active {
-    background-color: #77e189;
+    background-color: #404040;
     border: solid 1px transparent;
 }
 
