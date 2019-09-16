@@ -13,8 +13,8 @@
     <!-- Typed.js (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.10/lib/typed.min.js"></script>
     <!-- Bootstrap (CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome (CDN) -->
     <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css" rel="stylesheet">
     <!-- Main JS/CSS -->
@@ -142,19 +142,31 @@
         <h1 style="font-family: 'Nunito', sans-serif; color: white;" class="animated shake">Hi. 👋</h1>
     </div>
     <div class="wrapper loading">
+        
         <div class="container">
             <header>
-                <div class="row">
+                
+
+                    <!--
                     <div class="navbar">
                         <div class="navbar-header">
                             <button class="navbar-toggle collapsed" data-target=".navbar-collapse" data-toggle="collapse" type="button">
                                 <span class="sr-only">Toggle navigation</span>
                             </button>
-                            <a class="navbar-brand" href="https://github.com/InSertCod3">
-                                <span style="font-size: 24px;" class="brand-name"><i class="fa fa-github"></i> INSERTCOD3</span>
-                            </a>
-                            <span class="job-title">Software Engineer</span>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <a class="navbar-brand" href="https://github.com/InSertCod3">
+                                            <span style="font-size: 24px;" class="brand-name"><i class="fa fa-github"></i> INSERTCOD3</span>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <span class="job-title">Software Engineer</span>
+                                    </div>
+                                </div>
+                              </div>
                         </div>
+                        
                         <div class="collapse navbar-collapse">
                             <ul class="nav navbar-nav">
                                 <li>
@@ -181,10 +193,45 @@
                                   </span>
                                 </li>
                             </ul>
-                        </div><!-- /.nav-collapse -->
-                    </div><!-- /.navbar -->
-                </div>
+                        </div>
+                    </div>-->
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            
+                            <a class="navbar-brand" href="https://github.com/InSertCod3">
+                                <span style="font-size: 24px;" class="brand-name"><i class="fa fa-github"></i> INSERTCOD3</span>
+                            </a>
+                    
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                              <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#about-me">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#projects">Projects</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#footer">Contact</a>
+                                </li>
+                              </ul>
+                              <ul class="navbar-nav social">
+                                    <li><a class="nav-link" target="_blank" href="https://github.com/InSertCod3"> <i class="fa fa-github"></i> </a> </li>
+                                    <li><a class="nav-link" target="_blank" href="https://www.linkedin.com/in/shamoy-baker-472548163/"> <i class="fa fa-linkedin"></i> </a></li>
+                                    <li><a class="nav-link" target="_self" href="mailto:insertcod3@gmail.com"> <i class="fa fa-envelope"></i> </a></li>
+                                </ul>
+                            </div>
+                            <div class="inline">
+                                <!--
+                                <span style="margin-top: 12px; margin-left: 30%" class="toggle-switch">
+                                    <span class="toggle-knob"></span>
+                                </span>
+                                -->
+                            <div>
+                          </nav>
 
+                
                 <div id="about-me" class="row">
                     <div class="col-md-12 col-lg-12">
                         <h1 class="intro" class="lead">Shamoy Baker.</h1>
@@ -198,7 +245,10 @@
                     </div>
                 </div>
             </header>
-            <div id="projects" class="row justify-content-center grid-list-wrapper" id="projects">
+            <div  class="container" >
+                <div class="row" id="projects">
+
+                </div>
                 <!-- Item Template
                 <div class="col-sm-6 col-md-4 col-lg-4 grid-project-item">
                     <div class="grid-list"><a href="https://twitterquery-c6rnmqev2q-ue.a.run.app/" target="_blank">
@@ -265,45 +315,6 @@
             //Paste your Client Access Token in the line below within quotes - you can build your API from https://dribbble.com/account/applications 
             var project_list = [
                 {
-                    "title": "TwitterQuery",
-                    "card_attr": "md-size",
-                    "message": "Query Twitter Api (Frontend/Backend)",
-                    "description": "Constructed a web app that interacts with twitter’s API and executes user search queries containing keywords to present them on a paginated SPA (Single-page Application) using Vue.js.",
-                    "links": {
-                        "hosted_url": "https://twitterquery-c6rnmqev2q-ue.a.run.app/",
-                        "source_code_repo": "https://github.com/InSertCod3/TwitterQuery/"
-                    },
-                    "images": {
-                        "normal":"https://raw.githubusercontent.com/InSertCod3/TwitterQuery/master/screenshots/0.PNG"
-                    }
-                },
-                {
-                    "title": "Reactive Social Media (React.js Based)",
-                    "card_attr": "md-size",
-                    "message": "Social Media Web App",
-                    "description": "Allowed users to explore a concept Social Media app using Modern Technologies such a React.js",
-                    "links": {
-                        "hosted_url": "https://github.com/InSertCod3/Reactive-Social-Media",
-                        "source_code_repo": "https://github.com/InSertCod3/Reactive-Social-Media"
-                    },
-                    "images": {
-                        "normal":"https://raw.githubusercontent.com/InSertCod3/Reactive-Social-Media/master/screenshots/0.png"
-                    }
-                },
-                {
-                    "title": "Geo Suggestions Backend Api (Node.js)",
-                    "card_attr": "md-size",
-                    "message": "Geo Suggestions Backend Api",
-                    "description": "Node.js based Backend Service using Express, Fuse and Papaparse & using a Local (.tsv) File converted to JSON to be used as a api.",
-                    "links": {
-                        "hosted_url": "https://github.com/InSertCod3/Geo-Suggestions-Backend",
-                        "source_code_repo": "https://github.com/InSertCod3/Geo-Suggestions-Backend"
-                    },
-                    "images": {
-                        "normal":"img/geo_suggestions.svg"
-                    }
-                },
-                {
                     "title": "React Native Cooking App",
                     "card_attr": "",
                     "message": "React Native Cooking App Design Mock-up",
@@ -344,7 +355,7 @@
                 },
             ];
             project_list.forEach(function(shot) {
-                tplate = `<div class="col-sm-6 col-md-4 col-lg-4 grid-project-item ${shot.card_attr}">
+                tplate = `<div class="col-sm grid-project-item ${shot.card_attr}">
                     <div class="grid-list"><a href="${shot.links.hosted_url}" target="_blank">
                         <img class="img-responsive" src="${shot.images.normal}" alt="ABCD">
                         <div class="overlay">
