@@ -162,7 +162,8 @@ background: #fff;}
  }
  
 .social li{
-display: inline-block}
+    display: inline-block
+}
 
 .about-me-skill-list {
     margin:0 0 1.5em;
@@ -212,7 +213,7 @@ display: inline-block}
 }
 
 .grid-list {
-    margin:0 0 3em
+    margin:0 0 1em
 }
 
 .grid-project-item {
@@ -363,6 +364,19 @@ footer {
     .grid-project-item {
         width: 90%;
     }
+
+    /* Overlay Card */
+    .card-title {
+        color: #2f2f2f;
+    }
+
+    .card-message {
+        color: #7e7e7e;
+    }
+
+    .card-desc {
+        color: #7e7e7e;
+    }
 }
 
 @media only screen and (min-width: 480px) {
@@ -382,10 +396,11 @@ footer {
         padding:20px 30px
     }
         
-        .navbar-header{
-    margin: 0;
-    padding:0;
-    background: #fff;}
+    .navbar-header{
+        margin: 0;
+        padding:0;
+        background: #fff;
+    }
 
     .intro {
         font-size:44px;
@@ -413,20 +428,6 @@ footer {
         padding:1em 10em
     }
 
-    .overlay h3 {
-        display:block;
-        line-height:1.5em
-    }
-
-    .overlay h3 span {
-        display:block;
-        opacity:.34
-    }
-
-    .overlay h3 span:hover {
-        opacity:.54
-    }
-
     header {
         background:#fff;
         margin:0;
@@ -440,6 +441,21 @@ footer {
     .no-gutter-space > div {
         margin:0;
         padding:0
+    }
+
+    /* Item Overlay */
+    .overlay h3 {
+        display:block;
+        line-height:1.5em
+    }
+
+    .overlay h3 span {
+        display:block;
+        opacity:.34
+    }
+
+    .overlay h3 span:hover {
+        opacity:.54
     }
 
     .overlay {
@@ -456,6 +472,19 @@ footer {
         font-size:120%;
         background:#f5f5f5;
         background:rgba(47, 56, 61, .6)
+    }
+
+    /* Overlay Card */
+    .card-title {
+        color: white;
+    }
+
+    .card-message {
+        color: white;
+    }
+
+    .card-desc {
+        color: white;
     }
 
     .grid-list:hover .overlay {
@@ -478,7 +507,6 @@ footer {
     }
 
     .wrapper .container {
-        padding:0;
         background:#fff
     }
 
