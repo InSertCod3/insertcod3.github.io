@@ -162,7 +162,8 @@ background: #fff;}
  }
  
 .social li{
-display: inline-block}
+    display: inline-block
+}
 
 .about-me-skill-list {
     margin:0 0 1.5em;
@@ -382,10 +383,11 @@ footer {
         padding:20px 30px
     }
         
-        .navbar-header{
-    margin: 0;
-    padding:0;
-    background: #fff;}
+    .navbar-header{
+        margin: 0;
+        padding:0;
+        background: #fff;
+    }
 
     .intro {
         font-size:44px;
