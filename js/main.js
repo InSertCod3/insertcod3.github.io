@@ -14,7 +14,7 @@ $(function() {
     // Activate Console
     greeting();
 
-    // Activate Toogle Switch
+    // Activate Toggle Switch
     $('.toggle-switch').click(function() {
         if ($(this).hasClass('active')){
             $(this).removeClass('active');
