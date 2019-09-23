@@ -139,6 +139,16 @@ background: #fff;}
     border-color:#1eadef
 }
 
+/* Social */
+.social {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.social li{
+    display: inline-block
+}
+
 .social li a {
     padding-right:0
 }
@@ -160,10 +170,7 @@ background: #fff;}
 .navbar-nav>li>a:focus{
     background:none;
  }
- 
-.social li{
-    display: inline-block
-}
+
 
 .about-me-skill-list {
     margin:0 0 1.5em;
