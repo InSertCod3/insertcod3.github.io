@@ -464,21 +464,21 @@
                             </div>
                         </div>`;
                 
-                // Our target html object.
-                var _target_project_container = $('#projects_' + pro);
+                    // Our target html object.
+                    var _target_project_container = $('#projects_' + pro);
 
-                // Check if the project object exist
-                if (_target_project_container.length <= 0){
-                    // Create a empty div and popular with the correct attributes
-                    $('<div/>').attr({
-                        id: 'projects_' + pro,
-                        class: 'row'
-                    }).appendTo('#content-container');
-                }
-                
-                // Append to element
-                $('#projects_' + pro).append(template_html);
-            });
+                    // Check if the project object exist
+                    if (_target_project_container.length <= 0){
+                        // Create a empty div and popular with the correct attributes
+                        $('<div/>').attr({
+                            id: 'projects_' + pro,
+                            class: 'row'
+                        }).appendTo('#content-container');
+                    }
+                    
+                    // Append to element
+                    $('#projects_' + pro).append(template_html);
+                });
             }
             
           
