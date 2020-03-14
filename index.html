@@ -143,7 +143,7 @@
     </div>
     <div class="wrapper loading">
         
-        <div class="container">
+        <div class="container" style="margin-bottom: 3%;">
             <header>
                 
 
@@ -245,27 +245,8 @@
                     </div>
                 </div>
             </header>
-            <div  class="container" >
-                <div class="row" id="projects">
+            <div  class="container content-container" id="content-container">
 
-                </div>
-                <!-- Item Template
-                <div class="col-sm-6 col-md-4 col-lg-4 grid-project-item">
-                    <div class="grid-list"><a href="https://twitterquery-c6rnmqev2q-ue.a.run.app/" target="_blank">
-                        <img class="img-responsive" src="https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406__340.jpg" alt="ABCD">
-                        <div class="overlay">
-                            <h2 class="card-title">TwitterQuery</h2>
-                            <h3>Query Twitter Api (Frontend/Backend)</h3>
-                            <h4>Constructed a web app that interacts with twitter’s API and executes user
-                                search queries containing keywords to present them on a paginated SPA
-                                (Single-page Application) using Vue.js.</h4>
-                            <a href="https://twitterquery-c6rnmqev2q-ue.a.run.app/"><h3 class="trunc"><i class="fa fa-link"></i> Website</h3></a>
-                            <a href="https://github.com/InSertCod3/TwitterQuery/"><h3 class="trunc"><i class="fa fa-code"></i> Source Code</h3></a>
-                        </div>
-                    </div>
-                </div>
-                -->
-            </div>
         </div>
     </div>
 
@@ -313,64 +294,187 @@
             });
 
             //Paste your Client Access Token in the line below within quotes - you can build your API from https://dribbble.com/account/applications 
-            var project_list = [
-                {
-                    "title": "React Native Cooking App",
-                    "card_attr": "",
-                    "message": "React Native Cooking App Design Mock-up",
-                    "description": "Designed a app in React Native that enables user to visualize cooking recipes.",
-                    "links": {
-                        "hosted_url": "https://github.com/InSertCod3/cooking_react_native",
-                        "source_code_repo": "https://github.com/InSertCod3/cooking_react_native"
-                    },
-                    "images": {
-                        "normal":"https://raw.githubusercontent.com/InSertCod3/cooking_react_native/master/screenshots/Screenshot_3.png"
-                    }
+            var project_list = {
+                1: {
+                    "items":[
+                        {
+                            "title": "React Native Cooking App",
+                            "card_attr": "",
+                            "message": "React Native Cooking App Design Mock-up",
+                            "description": "Designed a app in React Native that enables user to visualize cooking recipes.",
+                            "links": {
+                                "hosted_url": "https://github.com/InSertCod3/cooking_react_native",
+                                "source_code_repo": "https://github.com/InSertCod3/cooking_react_native"
+                            },
+                            "images": {
+                                "normal":"https://raw.githubusercontent.com/InSertCod3/cooking_react_native/master/screenshots/Screenshot_3.png"
+                            }
+                        },
+                        {
+                            "title": "React Native Patients App",
+                            "card_attr": "",
+                            "message": "React Native Patients Management App Design Mock-up",
+                            "description": "Designed a app in React Native that help medical professionals manage there patients more efficiently.",
+                            "links": {
+                                "hosted_url": "https://github.com/InSertCod3/react_native_patients",
+                                "source_code_repo": "https://github.com/InSertCod3/react_native_patients"
+                            },
+                            "images": {
+                                "normal":"https://raw.githubusercontent.com/InSertCod3/react_native_patients/master/screenshots/screenshot_0.png"
+                            }
+                        },
+                        {
+                            "title": "React Native Pricing Carousel App",
+                            "card_attr": "",
+                            "message": "React Native Pricing App Design Mock-up",
+                            "description": "Designed a app in React Native that had responsive design concept.",
+                            "links": {
+                                "hosted_url": "https://github.com/InSertCod3/React_Native_Pricing_Carousel",
+                                "source_code_repo": "https://github.com/InSertCod3/React_Native_Pricing_Carousel"
+                            },
+                            "images": {
+                                "normal":"https://raw.githubusercontent.com/InSertCod3/React_Native_Pricing_Carousel/master/screenshots/Screenshot_0.png"
+                            }
+                        }
+                    ]
                 },
-                {
-                    "title": "React Native Patients App",
-                    "card_attr": "",
-                    "message": "React Native Patients Management App Design Mock-up",
-                    "description": "Designed a app in React Native that help medical professionals manage there patients more efficiently.",
-                    "links": {
-                        "hosted_url": "https://github.com/InSertCod3/react_native_patients",
-                        "source_code_repo": "https://github.com/InSertCod3/react_native_patients"
-                    },
-                    "images": {
-                        "normal":"https://raw.githubusercontent.com/InSertCod3/react_native_patients/master/screenshots/screenshot_0.png"
-                    }
+                2: {
+                    "items":[
+                        {
+                            "title": "React Native Cooking App",
+                            "card_attr": "disable-border",
+                            "message": "React Native Cooking App Design Mock-up",
+                            "description": "Designed a app in React Native that enables user to visualize cooking recipes.",
+                            "links": {
+                                "hosted_url": "https://github.com/InSertCod3/cooking_react_native",
+                                "source_code_repo": "https://github.com/InSertCod3/cooking_react_native"
+                            },
+                            "images": {
+                                "normal":"img/mockup/snowboard_weekend_getaway.png"
+                            }
+                        }
+                    ]
                 },
-                {
-                    "title": "React Native Pricing Carousel App",
-                    "card_attr": "",
-                    "message": "React Native Pricing App Design Mock-up",
-                    "description": "Designed a app in React Native that had responsive design concept.",
-                    "links": {
-                        "hosted_url": "https://github.com/InSertCod3/React_Native_Pricing_Carousel",
-                        "source_code_repo": "https://github.com/InSertCod3/React_Native_Pricing_Carousel"
-                    },
-                    "images": {
-                        "normal":"https://raw.githubusercontent.com/InSertCod3/React_Native_Pricing_Carousel/master/screenshots/Screenshot_0.png"
-                    }
+                3: {
+                    "items":[
+                        {
+                            "title": "React Native Cooking App",
+                            "card_attr": "disable-border",
+                            "message": "React Native Cooking App Design Mock-up",
+                            "description": "Designed a app in React Native that enables user to visualize cooking recipes.",
+                            "links": {
+                                "hosted_url": "https://github.com/InSertCod3/cooking_react_native",
+                                "source_code_repo": "https://github.com/InSertCod3/cooking_react_native"
+                            },
+                            "images": {
+                                "normal":"img/mockup/movie_night_0.png"
+                            }
+                        },
+                        {
+                            "title": "React Native Cooking App",
+                            "card_attr": "disable-border",
+                            "message": "React Native Cooking App Design Mock-up",
+                            "description": "Designed a app in React Native that enables user to visualize cooking recipes.",
+                            "links": {
+                                "hosted_url": "https://github.com/InSertCod3/cooking_react_native",
+                                "source_code_repo": "https://github.com/InSertCod3/cooking_react_native"
+                            },
+                            "images": {
+                                "normal":"img/mockup/movie_night_1.png"
+                            }
+                        },
+                        {
+                            "title": "React Native Cooking App",
+                            "card_attr": "disable-border",
+                            "message": "React Native Cooking App Design Mock-up",
+                            "description": "Designed a app in React Native that enables user to visualize cooking recipes.",
+                            "links": {
+                                "hosted_url": "https://github.com/InSertCod3/cooking_react_native",
+                                "source_code_repo": "https://github.com/InSertCod3/cooking_react_native"
+                            },
+                            "images": {
+                                "normal":"img/mockup/movie_night_2.png"
+                            }
+                        }
+                    ]
                 },
-            ];
-            project_list.forEach(function(shot) {
-                tplate = `<div class="col-sm grid-project-item ${shot.card_attr}">
-                    <div class="grid-list">
-                        <a href="${shot.links.hosted_url}" target="_blank">
-                            <img class="img-responsive" src="${shot.images.normal}" alt="ABCD">
-                            <div class="overlay">
-                                <h2 class="card-title">${shot.title}</h2>
-                                <h3 class="card-message">${shot.message}</h3>
-                                <h4 class="card-desc">${shot.description}</h4>
-                                <a href="${shot.links.hosted_url}"><h3 class="trunc"><i class="fa fa-link"></i> <u>Website</u></h3></a>
-                                <a href="${shot.links.source_code_repo}"><h3 class="trunc"><i class="fa fa-code"></i> <u>Source Code</u></h3>
-                            </a>
+                4: {
+                    "items":[
+                        {
+                            "title": "React Native Cooking App",
+                            "card_attr": "",
+                            "message": "React Native Cooking App Design Mock-up",
+                            "description": "Designed a app in React Native that enables user to visualize cooking recipes.",
+                            "links": {
+                                "hosted_url": "https://github.com/InSertCod3/cooking_react_native",
+                                "source_code_repo": "https://github.com/InSertCod3/cooking_react_native"
+                            },
+                            "images": {
+                                "normal":"img/mockup/i_am_moose_desktop.png"
+                            }
+                        }
+                    ]
+                },
+                5: {
+                    "items":[
+                        {
+                            "title": "React Native Cooking App",
+                            "card_attr": "",
+                            "message": "React Native Cooking App Design Mock-up",
+                            "description": "Designed a app in React Native that enables user to visualize cooking recipes.",
+                            "links": {
+                                "hosted_url": "https://github.com/InSertCod3/cooking_react_native",
+                                "source_code_repo": "https://github.com/InSertCod3/cooking_react_native"
+                            },
+                            "images": {
+                                "normal":"img/mockup/eiffel_tower_iphone_mockup.png"
+                            }
+                        }
+                    ]
+                }
+            };
+            
+            for (pro in project_list){
+                var t_pros = project_list[pro];
+                t_pros.items.forEach(function(shot) {
+                    var template_html = `
+                        <div class="col-sm grid-project-item ${shot.card_attr}">
+                            <div class="grid-list">
+                                <a href="${shot.links.hosted_url}" target="_blank">
+                                    <img class="img-responsive" src="${shot.images.normal}" alt="ABCD">
+                                    <div class="overlay">
+                                        <h2 class="card-title">${shot.title}</h2>
+                                        <h3 class="card-message">${shot.message}</h3>
+                                        <h4 class="card-desc">${shot.description}</h4>
+                                        <a href="${shot.links.hosted_url}">
+                                            <h3 class="trunc">
+                                                <i class="fa fa-link"></i>
+                                                <u>Website</u>
+                                            </h3>
+                                        </a>
+                                        <a href="${shot.links.source_code_repo}">
+                                            <h3 class="trunc">
+                                                <i class="fa fa-code"></i>
+                                                <u>Source Code</u>
+                                            </h3>
+                                        </a>
+                                    </div>
+                            </div>
                         </div>
-                    </div>
-                </div>`
-                $('#projects').append(tplate)
+                    </div>`;
+                var _target_project_container = $('#projects_' + pro);
+                console.log(_target_project_container);
+                if (_target_project_container.length <= 0){
+                    $('<div/>').attr({
+                        id: 'projects_' + pro,
+                        class: 'row'
+                    }).appendTo('#content-container');
+                }
+                
+                $('#projects_' + pro).append(template_html);
             });
+            }
+            
           
     </script>
 </body>
