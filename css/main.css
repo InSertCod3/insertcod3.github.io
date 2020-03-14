@@ -291,6 +291,12 @@ background: #fff;}
     margin-right:1em
 }
 
+.link-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .trunc {
     width: 300px;
     overflow:hidden; 

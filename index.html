@@ -440,12 +440,13 @@
                     var template_html = `
                         <div class="col-sm grid-project-item ${shot.card_attr}">
                             <div class="grid-list">
-                                <a href="${shot.links.hosted_url}" target="_blank">
-                                    <img class="img-responsive" src="${shot.images.normal}" alt="ABCD">
-                                    <div class="overlay">
-                                        <h2 class="card-title">${shot.title}</h2>
-                                        <h3 class="card-message">${shot.message}</h3>
-                                        <h4 class="card-desc">${shot.description}</h4>
+                                <a href="${shot.links.hosted_url}" target="_blank"></a>
+                                <img class="img-responsive" src="${shot.images.normal}" alt="ABCD"></img>
+                                <div class="overlay">
+                                    <h2 class="card-title">${shot.title}</h2>
+                                    <h3 class="card-message">${shot.message}</h3>
+                                    <h4 class="card-desc">${shot.description}</h4>
+                                    <div class="link-container">
                                         <a href="${shot.links.hosted_url}">
                                             <h3 class="trunc">
                                                 <i class="fa fa-link"></i>
@@ -459,18 +460,23 @@
                                             </h3>
                                         </a>
                                     </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>`;
+                        </div>`;
+                
+                // Our target html object.
                 var _target_project_container = $('#projects_' + pro);
-                console.log(_target_project_container);
+
+                // Check if the project object exist
                 if (_target_project_container.length <= 0){
+                    // Create a empty div and popular with the correct attributes
                     $('<div/>').attr({
                         id: 'projects_' + pro,
                         class: 'row'
                     }).appendTo('#content-container');
                 }
                 
+                // Append to element
                 $('#projects_' + pro).append(template_html);
             });
             }
