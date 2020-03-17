@@ -20,6 +20,9 @@
     <!-- Main JS/CSS -->
     <link href="css/main.css" rel="stylesheet">
     <script src="js/main.js"></script>
+    <!-- Preloader Screen Handle (CSS/JS) -->
+    <link href="css/preloader.css" rel="stylesheet"></style>
+    <script src="js/preloader.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Nunito:600&display=swap" rel="stylesheet">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -28,108 +31,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-56KHHL7');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Preloader Screen Handle (CSS/JS) -->
-    <style>
-        /* Preloader */
-        .loading {
-            overflow: hidden;
-            margin-top: 0%;
-        }
-
-        #preloader {
-            height: 100vh;
-            width: 100vw;
-            display: block;
-            position: fixed;
-            z-index: 3;
-            background-color: #4A90E2;
-        }
-
-        #preloader h1 {
-            padding-top: 40vh
-        }
-
-        #preloader {
-            text-align: center
-        }
-
-        .lds-ellipsis {
-            display: inline-block;
-            position: relative;
-            width: 64px;
-            height: 64px;
-        }
-
-        .lds-ellipsis div {
-            position: absolute;
-            top: 27px;
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: #fff;
-            animation-timing-function: cubic-bezier(0, 1, 1, 0);
-        }
-
-        .lds-ellipsis div:nth-child(1) {
-            left: 6px;
-            animation: lds-ellipsis1 0.6s infinite;
-        }
-
-        .lds-ellipsis div:nth-child(2) {
-            left: 6px;
-            animation: lds-ellipsis2 0.6s infinite;
-        }
-
-        .lds-ellipsis div:nth-child(3) {
-            left: 26px;
-            animation: lds-ellipsis2 0.6s infinite;
-        }
-
-        .lds-ellipsis div:nth-child(4) {
-            left: 45px;
-            animation: lds-ellipsis3 0.6s infinite;
-        }
-
-        @keyframes lds-ellipsis1 {
-            0% {
-                transform: scale(0);
-            }
-
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes lds-ellipsis3 {
-            0% {
-                transform: scale(1);
-            }
-
-            100% {
-                transform: scale(0);
-            }
-        }
-
-        @keyframes lds-ellipsis2 {
-            0% {
-                transform: translate(0, 0);
-            }
-
-            100% {
-                transform: translate(19px, 0);
-            }
-        }
-    </style>
-    <script>
-        function fadeloader() {
-            $("#preloader").fadeOut("slow");
-            $(".wrapper").removeClass("loading").delay(1100);
-        }
-        $(window).on("load", function () {
-            window.setTimeout("fadeloader();", 1100)
-        });
-    </script>
 </head>
 
 <body>
