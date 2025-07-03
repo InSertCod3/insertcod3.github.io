@@ -24,3 +24,23 @@ $(function() {
       });
 });
 
+// Live EST Clock
+function updateESTClock() {
+    const estClock = document.getElementById('est-clock');
+    if (!estClock) return;
+    const now = new Date();
+    // Convert to EST (UTC-5 or UTC-4 for daylight saving)
+    // Use Intl API for robust timezone handling
+    const options = {
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,
+        timeZone: 'America/New_York'
+    };
+    const timeString = now.toLocaleTimeString('en-US', options);
+    estClock.textContent = timeString;
+}
+setInterval(updateESTClock, 1000);
+document.addEventListener('DOMContentLoaded', updateESTClock);
+
