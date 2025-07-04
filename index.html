@@ -9,7 +9,7 @@
     <!-- jQuery (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
     <!-- Animate CSS (CDN) -->
-    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Typed.js (CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.10/lib/typed.min.js"></script>
     <!-- Bootstrap (CDN) -->
@@ -43,7 +43,7 @@
     <!-- End Google Tag Manager (noscript) -->
     <div id="preloader" >
             <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-        <h1 style="font-family: 'Nunito', sans-serif; color: white; font-size: 3rem;" class="animated shake">Hi. 👋</h1>
+        <h1 style="font-family: 'Nunito', sans-serif; color: white; font-size: 3rem;" class="animate__animated animate__shakeX">Hi. 👋</h1>
     </div>
     <div class="bg-gray-100 loading">
         
@@ -87,6 +87,9 @@
                             <div>
                                 <h1 class="text-4xl lg:text-5xl font-bold gradient-text mb-4">Shamoy Baker</h1>
                                 <p class="text-lg text-gray-600 mb-2">Software Engineer</p>
+                                <p class="text-base font-semibold text-blue-700 mb-2">
+                                    Senior Full-Stack Engineer &nbsp;|&nbsp; 5+ Years Experience &nbsp;|&nbsp; U.S. Patent Holder
+                                </p>
                                 <p class="text-sm text-gray-500">Hello, my name is Shamoy Baker. I am a <span id="skill-title-0" class="text-blue-600 font-semibold">&nbsp;</span></p>
                             </div>
                             <div class="hidden lg:block">
@@ -107,7 +110,7 @@
                             </div>
                             <div class="flex items-center">
                                 <span class="w-2 h-2 bg-green-500 rounded-full mr-2 skill-dot"></span>
-                                <span class="text-gray-700">Backend Development</span>
+                                <span class="text-gray-700">Fullstack Development</span>
                             </div>
                             <div class="flex items-center">
                                 <span class="w-2 h-2 bg-green-500 rounded-full mr-2 skill-dot"></span>
@@ -138,6 +141,14 @@
                             </a>
                         </div>
                     </div>
+                </div>
+
+                <!-- Quick Facts Bar -->
+                <div class="flex flex-wrap gap-4 my-4 justify-center">
+                    <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">U.S. Patent Holder</span>
+                    <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">AWS & GCP Certified</span>
+                    <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold">Backend/Frontend Developer</span>
+                    <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">Syracuse, NY | Remote OK</span>
                 </div>
 
                 <!-- Book a Call & Time Row -->
@@ -199,9 +210,33 @@
                                     <p class="text-sm text-gray-600">Full-stack development</p>
                                 </div>
                                 <div class="bg-white rounded-lg p-4 border border-slate-200">
-                                    <h4 class="font-semibold text-gray-800 mb-2">Education</h4>
-                                    <p class="text-sm text-gray-600">Computer Science degree</p>
+                                    <h4 class="font-semibold text-gray-800 mb-2">Certifications</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-600">
+                                        <li>AWS Associate Solution Architect</li>
+                                        <li>Google Cloud Solution Architect</li>
+                                    </ul>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patents & Certifications Card -->
+                <div class="mb-8">
+                    <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl p-6 border border-yellow-200 hover:shadow-lg transition-all duration-300 bento-card card-hover">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-4">Patents & Certifications</h2>
+                        <div class="space-y-4">
+                            <div class="bg-white rounded-lg p-4 border border-yellow-200">
+                                <h4 class="font-semibold text-gray-800 mb-2">Patent</h4>
+                                <p class="text-sm text-gray-600 mb-1">Optimized Modifications to a Website</p>
+                                <p class="text-xs text-gray-500">U.S. Patent 12,093,167 (2024)</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 border border-yellow-200">
+                                <h4 class="font-semibold text-gray-800 mb-2">Certifications</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600">
+                                    <li>AWS Associate Solution Architect</li>
+                                    <li>Google Cloud Solution Architect</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -483,6 +518,66 @@
 
             
           
+    </script>
+    <!-- Floating Let's Connect Button -->
+    <div id="lets-connect-btn" style="position:fixed;bottom:32px;right:32px;z-index:1000;">
+      <button id="lets-connect-main-btn" onclick="toggleLetsConnectPopup()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-full shadow-lg flex items-center gap-2 font-semibold animate__animated">
+        <i class="fa fa-paper-plane"></i> Let's Connect
+      </button>
+      <div id="lets-connect-popup" class="hidden mt-2 bg-white border border-gray-200 rounded-xl shadow-xl p-4 flex flex-col gap-3 min-w-[220px] animate__animated">
+        <a href="mailto:insertcod3@gmail.com" class="flex items-center gap-2 text-gray-700 hover:text-blue-600 font-medium transition-colors"><i class="fa fa-envelope"></i> insertcod3@gmail.com</a>
+        <a href="https://www.linkedin.com/in/shamoy-baker-472548163/" target="_blank" class="flex items-center gap-2 text-gray-700 hover:text-blue-600 font-medium transition-colors"><i class="fa fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/InSertCod3" target="_blank" class="flex items-center gap-2 text-gray-700 hover:text-blue-600 font-medium transition-colors"><i class="fa fa-github"></i> GitHub</a>
+        <a href="tel:+13473915495" class="flex items-center gap-2 text-gray-700 hover:text-blue-600 font-medium transition-colors"><i class="fa fa-phone"></i> +1 (347) 391-5495</a>
+      </div>
+    </div>
+    <script>
+      // Animate.css shakeX after a delay on page load
+      window.addEventListener('DOMContentLoaded', function() {
+        var btn = document.getElementById('lets-connect-main-btn');
+        // Add shakeX after a delay
+        setTimeout(function() {
+          btn.classList.add('animate__shakeX');
+        }, 2000);
+      });
+      // Remove shakeX after animation
+      var btn = document.getElementById('lets-connect-main-btn');
+      btn.addEventListener('animationend', function(e) {
+        if (e.animationName === 'heartBeat') {
+          btn.classList.remove('animate__heartBeat');
+        }
+        if (e.animationName === 'shakeX') {
+          btn.classList.remove('animate__shakeX');
+        }
+      });
+      // Popup animation logic with animate.css
+      function toggleLetsConnectPopup() {
+        var popup = document.getElementById('lets-connect-popup');
+        if (popup.classList.contains('hidden')) {
+          popup.classList.remove('hidden', 'animate__fadeOutDown');
+          popup.classList.add('animate__bounceInUp');
+        } else {
+          popup.classList.remove('animate__bounceInUp');
+          popup.classList.add('animate__fadeOutDown');
+          setTimeout(function() {
+            popup.classList.add('hidden');
+          }, 500);
+        }
+      }
+      // Hide popup when clicking outside
+      document.addEventListener('click', function(event) {
+        var btn = document.getElementById('lets-connect-btn');
+        var popup = document.getElementById('lets-connect-popup');
+        if (!btn.contains(event.target)) {
+          if (!popup.classList.contains('hidden')) {
+            popup.classList.remove('animate__bounceInUp');
+            popup.classList.add('animate__fadeOutDown');
+            setTimeout(function() {
+              popup.classList.add('hidden');
+            }, 500);
+          }
+        }
+      });
     </script>
 </body>
 
