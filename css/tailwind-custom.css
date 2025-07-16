@@ -303,7 +303,7 @@ html {
 /* Phone: up to 767px */
 @media (max-width: 767px) {
   .responsive-iframe {
-    height: 320vh;
+    height: 190vh;
     min-height: 300px;
     max-height: none;
   }
