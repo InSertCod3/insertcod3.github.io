@@ -277,37 +277,38 @@ html {
   width: 100%;
   min-height: 400px;
   height: 80vh;
-  max-height: 800px;
+  max-height: 900px;
   display: block;
   border: 0;
 }
 
-/* Desktop: 1024px and up */
-@media (min-width: 1024px) {
-  .responsive-iframe {
-    height: 180vh;
-    min-height: 500px;
-    max-height: 900px;
-  }
-}
+
+/* Phone: up to 767px */
+@media (max-width: 767px) {
+    .responsive-iframe {
+      height: 160vh;
+      min-height: 300px;
+      max-height: none;
+    }
+} 
 
 /* Tablet: 768px to 1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
   .responsive-iframe {
-    height: 180vh;
+    height: 110vh;
     min-height: 400px;
     max-height: 800px;
   }
 }
 
-/* Phone: up to 767px */
-@media (max-width: 767px) {
-  .responsive-iframe {
-    height: 190vh;
-    min-height: 300px;
-    max-height: none;
-  }
-} 
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+    .responsive-iframe {
+      height: 90vh;
+      min-height: 500px;
+      max-height: 900px;
+    }
+}
 
 /* 4K: 2560px and up */
 @media (min-width: 2560px) {
