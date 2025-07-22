@@ -5,6 +5,10 @@
     transition: all 0.2s ease-in;
 }
 
+.logo {
+
+}
+
 .toggle-switch {
     height: 30px;
     width: 55px;
