@@ -1,0 +1,11 @@
+[
+  {
+    "slug": "hello-world",
+    "title": "Hello, world: why I'm starting a dev blog",
+    "date": "2026-10-06",
+    "summary": "What this blog is for, what I'll write about, and how to add new posts to this site.",
+    "tags": ["Meta"],
+    "readTime": "2 min read",
+    "draft": false
+  }
+]
