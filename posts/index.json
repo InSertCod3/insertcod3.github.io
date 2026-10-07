@@ -1,11 +1,23 @@
 [
   {
+    "slug": "learning-to-mig-weld",
+    "title": "Learning to MIG weld after ten years away",
+    "date": "2026-10-06",
+    "summary": "After a decade of keyboards, I picked up a MIG welder again. Turns out welding and debugging have a lot in common.",
+    "tags": ["Welding", "Hobbies"],
+    "readTime": "3 min read",
+    "cover": "img/static/svack3y3jd.jpg",
+    "emoji": "🔥",
+    "draft": false
+  },
+  {
     "slug": "hello-world",
     "title": "Hello, world: why I'm starting a dev blog",
     "date": "2026-10-06",
     "summary": "What this blog is for, what I'll write about, and how to add new posts to this site.",
     "tags": ["Meta"],
     "readTime": "2 min read",
+    "emoji": "👋",
     "draft": false
   }
 ]

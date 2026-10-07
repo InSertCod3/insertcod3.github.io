@@ -95,15 +95,23 @@ function fmtDate(iso) {
   return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
 }
 
+function coverHtml(p) {
+  var fallback = '<div class="cover-fallback">' + esc(p.emoji || "✍️") + "</div>";
+  if (!p.cover) return '<div class="cover">' + fallback + "</div>";
+  return '<div class="cover">' + fallback +
+    '<img src="' + esc(p.cover) + '" alt="" loading="lazy" onerror="this.remove()"></div>';
+}
+
 function postCard(p, feature, solo) {
   var tags = (p.tags || []).map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("");
-  return '<a class="card' + (feature ? " feature" : "") + (solo ? " solo" : "") + '" href="post.html?p=' + encodeURIComponent(p.slug) + '">' +
-    '<div class="tags">' + tags + "</div>" +
+  return '<a class="card post-card' + (feature ? " feature" : "") + (solo ? " solo" : "") + '" href="post.html?p=' + encodeURIComponent(p.slug) + '">' +
+    coverHtml(p) +
+    '<div class="card-body"><div class="tags">' + tags + "</div>" +
     "<h3>" + esc(p.title) + "</h3>" +
     "<p>" + esc(p.summary) + "</p>" +
     '<div class="meta"><span>' + fmtDate(p.date) + "</span>" +
     (p.readTime ? "<span>· " + esc(p.readTime) + "</span>" : "") +
-    '<span class="arrow">→</span></div></a>';
+    '<span class="arrow">→</span></div></div></a>';
 }
 
 function emptyPosts(msg) {
@@ -133,8 +141,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!posts.length) { list.outerHTML = emptyPosts(); return; }
       list.innerHTML = posts.map(function (p) {
         return '<a class="post-row" href="post.html?p=' + encodeURIComponent(p.slug) + '">' +
-          '<time datetime="' + esc(p.date) + '">' + fmtDate(p.date) + "</time>" +
-          "<div><h3>" + esc(p.title) + "</h3><p>" + esc(p.summary) + "</p></div>" +
+          '<div class="thumb">' + coverHtml(p) + "</div>" +
+          "<div><time datetime=\"" + esc(p.date) + "\">" + fmtDate(p.date) + "</time><h3>" + esc(p.title) + "</h3><p>" + esc(p.summary) + "</p></div>" +
           '<div class="tags">' + (p.tags || []).map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("") + "</div></a>";
       }).join("");
     }).catch(function () { list.outerHTML = emptyPosts("Couldn't load posts"); });
@@ -159,6 +167,7 @@ function renderPost(article) {
       .then(function (r) { if (!r.ok) throw new Error("md " + r.status); return r.text(); })
       .then(function (md) {
         document.title = meta.title + " — " + SITE.name;
+        if (meta.cover) md = md.replace(/^\s*!\[[^\]]*\]\([^)]*\)\s*/, "");
         var html = DOMPurify.sanitize(marked.parse(md));
         article.innerHTML =
           '<a class="back" href="blog.html">← Dev Blog</a>' +
@@ -166,6 +175,7 @@ function renderPost(article) {
           '<div class="byline"><img src="' + SITE.avatar + '" alt="">' +
             "<span>" + SITE.name + "</span><span>·</span><span>" + fmtDate(meta.date) + "</span>" +
             (meta.readTime ? "<span>·</span><span>" + esc(meta.readTime) + "</span>" : "") + "</div>" +
+          (meta.cover ? '<figure class="hero-img">' + coverHtml(meta) + "</figure>" : "") +
           '<div class="prose">' + html + "</div>";
         if (window.hljs) article.querySelectorAll("pre code").forEach(function (b) { hljs.highlightElement(b); });
       });
