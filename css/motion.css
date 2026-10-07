@@ -1,0 +1,193 @@
+/* ==========================================================
+   Motion layer — loaded after site.css.
+   Everything here is progressive enhancement: without JS or with
+   prefers-reduced-motion, the page is fully visible and static.
+   ========================================================== */
+
+:root { --ease: cubic-bezier(.2, .7, .2, 1); }
+
+/* ---------- Page enter / leave ---------- */
+.js body { animation: pagein .5s ease both; }
+@keyframes pagein { from { opacity: 0; } }
+body.leaving { opacity: 0; transition: opacity .18s ease; }
+
+/* ---------- Scroll progress ---------- */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 60; pointer-events: none;
+  background: linear-gradient(90deg, var(--ink), var(--accent));
+  transform: scaleX(var(--p, 0)); transform-origin: 0 50%;
+}
+
+/* ---------- Header: shadow + hide on scroll down ---------- */
+.site-header { transition: transform .35s var(--ease), box-shadow .3s ease, background .3s ease; }
+.site-header.scrolled { box-shadow: 0 6px 24px rgba(0,0,0,.06); }
+.site-header.hide { transform: translateY(-100%); }
+body.menu-open { overflow: hidden; }
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 40; background: rgba(10,10,10,.28);
+  opacity: 0; pointer-events: none; transition: opacity .3s ease;
+}
+body.menu-open::after { opacity: 1; pointer-events: auto; }
+.brand img { transition: transform .5s var(--ease); }
+.brand:hover img { transform: rotate(-12deg) scale(1.08); }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; isolation: isolate; }
+.hero::before, .hero::after {
+  content: ""; position: absolute; z-index: -1; pointer-events: none; left: -10vw; right: -10vw; top: -40px; height: 540px;
+}
+.hero::before {
+  background:
+    radial-gradient(38% 48% at 24% 38%, rgba(180, 86, 31, .22), transparent 70%),
+    radial-gradient(34% 44% at 76% 32%, rgba(34, 197, 94, .15), transparent 70%),
+    radial-gradient(30% 40% at 54% 78%, rgba(99, 102, 241, .13), transparent 70%);
+  filter: blur(18px); animation: aurora 16s ease-in-out infinite alternate; will-change: transform;
+}
+.hero::after {
+  background-image: radial-gradient(rgba(0,0,0,.14) 1px, transparent 1.3px); background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 55% at 50% 34%, #000, transparent 75%);
+  mask-image: radial-gradient(ellipse 60% 55% at 50% 34%, #000, transparent 75%);
+  animation: gridfade 1.4s ease .2s backwards;
+}
+@keyframes aurora { to { transform: translate3d(4%, 5%, 0) scale(1.14) rotate(4deg); } }
+@keyframes gridfade { from { opacity: 0; } }
+
+.js .hero > *, .js .page-hero > * { animation: rise .85s var(--ease) backwards; }
+.hero > :nth-child(1), .page-hero > :nth-child(1) { animation-delay: .05s; }
+.hero > :nth-child(2), .page-hero > :nth-child(2) { animation-delay: .15s; }
+.hero > :nth-child(3), .page-hero > :nth-child(3) { animation-delay: .27s; }
+.hero > :nth-child(4) { animation-delay: .39s; }
+.hero > :nth-child(5) { animation-delay: .5s; }
+@keyframes rise { from { opacity: 0; transform: translate3d(0, 26px, 0); } }
+
+/* highlighter sweep behind "Write it down." */
+.hero h1 em {
+  background: linear-gradient(var(--tint), var(--tint)) no-repeat 0 0 / 0% 100%;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  animation: sweep .9s var(--ease) .75s forwards;
+}
+@keyframes sweep { to { background-size: 100% 100%; } }
+
+/* live dot ping */
+.eyebrow .dot { position: relative; box-shadow: none; }
+.eyebrow .dot::after {
+  content: ""; position: absolute; inset: 0; border-radius: 50%; background: inherit;
+  animation: ping 2s cubic-bezier(0, 0, .2, 1) infinite;
+}
+@keyframes ping { 75%, 100% { transform: scale(3.2); opacity: 0; } }
+
+/* ---------- Scroll reveal (tagged by motion.js) ---------- */
+.js [data-reveal] {
+  opacity: 0; transform: translate3d(0, 30px, 0);
+  transition: opacity .8s var(--ease) calc(var(--d, 0) * 80ms), transform .8s var(--ease) calc(var(--d, 0) * 80ms);
+  will-change: opacity, transform;
+}
+.js [data-reveal="left"]  { transform: translate3d(-34px, 0, 0); }
+.js [data-reveal="right"] { transform: translate3d(34px, 0, 0); }
+.js [data-reveal="scale"] { transform: scale(.94); }
+.js [data-reveal="fade"]  { transform: none; }
+.js [data-reveal].in { opacity: 1; transform: none; }
+
+/* ---------- Buttons ---------- */
+.btn { position: relative; overflow: hidden; }
+.btn::after {
+  content: ""; position: absolute; top: 0; bottom: 0; left: -70%; width: 50%; pointer-events: none;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.4), transparent); transform: skewX(-20deg);
+}
+.btn-ghost::after, .cta-band .btn::after { background: linear-gradient(100deg, transparent, rgba(0,0,0,.07), transparent); }
+.btn:active { transform: scale(.97); transition-duration: .08s; }
+.hero-actions .btn:first-child { animation: nudge 3.2s ease-in-out 2.4s infinite; }
+@keyframes nudge { 0%, 88%, 100% { transform: none; } 92% { transform: translateY(-3px); } 96% { transform: translateY(0); } }
+
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover::after { left: 130%; transition: left .7s var(--ease); }
+  .btn:hover { transform: translateY(-2px); }
+
+  /* spotlight + tilt on cards */
+  .card { position: relative; }
+  .card::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 0;
+    background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(180, 86, 31, .09), transparent 70%);
+    opacity: 0; transition: opacity .3s ease;
+  }
+  .card:hover::before { opacity: 1; }
+  .card > * { position: relative; z-index: 1; }
+  a.card { transform-style: preserve-3d; }
+  a.card:hover {
+    transform: perspective(900px) translateY(-4px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: border-color .15s ease, box-shadow .3s ease, transform .12s ease-out;
+  }
+  .logo-tile:hover { transform: translateY(-4px) scale(1.04); border-color: var(--ink); }
+}
+a.card:active { transform: scale(.985); }
+.card .arrow { transition: transform .25s var(--ease); }
+
+/* link underline slide */
+.more, .footer-grid a { background: linear-gradient(currentColor, currentColor) no-repeat 0 100% / 0 1.5px; transition: background-size .35s var(--ease), color .15s; }
+.more:hover, .footer-grid a:hover { background-size: 100% 1.5px; text-decoration: none; }
+
+/* cover zoom */
+.cover img { transition: transform .8s var(--ease); }
+a:hover .cover img { transform: scale(1.06); }
+
+/* ---------- Stack marquee ---------- */
+.logos.is-marquee {
+  display: block; overflow: hidden; padding: 6px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.logos.is-marquee .track { display: flex; gap: 12px; width: max-content; animation: marquee 30s linear infinite; }
+.logos.is-marquee:hover .track, .logos.is-marquee:active .track { animation-play-state: paused; }
+.logos.is-marquee .logo-tile { flex: none; width: 150px; transition: transform .3s var(--ease), border-color .2s; }
+@keyframes marquee { to { transform: translateX(calc(-50% - 6px)); } }
+@media (max-width: 720px) { .logos.is-marquee .logo-tile { width: 118px; } }
+
+/* ---------- CTA band ---------- */
+.cta-band::before {
+  content: ""; position: absolute; inset: -40%; pointer-events: none;
+  background:
+    radial-gradient(30% 30% at 30% 40%, rgba(180, 86, 31, .45), transparent 70%),
+    radial-gradient(26% 26% at 72% 62%, rgba(99, 102, 241, .35), transparent 70%);
+  filter: blur(30px); animation: spin 22s linear infinite;
+}
+.cta-band > * { position: relative; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.cup { position: relative; }
+.steam { animation: float 3s ease-in-out infinite; }
+.cup::before, .cup::after {
+  content: ""; position: absolute; left: 50%; top: -6px; width: 6px; height: 22px; border-radius: 6px;
+  background: linear-gradient(to top, rgba(255,255,255,.5), transparent); filter: blur(3px); opacity: 0;
+  animation: wisp 2.8s ease-in-out infinite;
+}
+.cup::before { margin-left: -12px; }
+.cup::after { margin-left: 8px; animation-delay: 1.2s; }
+@keyframes wisp { 0% { transform: translateY(14px) scaleX(1); opacity: 0; } 30% { opacity: .9; } 100% { transform: translateY(-22px) scaleX(1.8); opacity: 0; } }
+
+/* ---------- Blog rows ---------- */
+.post-row { transition: background .25s ease, padding .3s var(--ease); }
+@media (hover: hover) { .post-row:hover { background: linear-gradient(90deg, rgba(245,243,239,.9), transparent); padding-left: 12px; } }
+
+/* ---------- Sticky mobile CTA ---------- */
+.mobile-cta { display: none; }
+@media (max-width: 720px) {
+  .mobile-cta {
+    display: block; position: fixed; z-index: 45; left: max(16px, env(safe-area-inset-left)); right: max(16px, env(safe-area-inset-right));
+    bottom: calc(14px + env(safe-area-inset-bottom));
+    transform: translateY(160%); opacity: 0; pointer-events: none;
+    transition: transform .45s var(--ease), opacity .3s ease;
+  }
+  .mobile-cta.show { transform: none; opacity: 1; pointer-events: auto; }
+  .mobile-cta .btn { width: 100%; box-shadow: 0 10px 30px rgba(0,0,0,.28); padding: 16px; font-size: 16px; }
+  body.menu-open .mobile-cta { transform: translateY(160%); opacity: 0; }
+}
+
+/* ---------- Reduced motion: everything visible, nothing moving ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .hero h1 em { background-size: 100% 100%; }
+  .js [data-reveal] { opacity: 1; transform: none; }
+  .scroll-progress { display: none; }
+}
+
+/* keep decorative overflow (aurora, marquee) from widening the page */
+main { overflow-x: clip; }

@@ -34,15 +34,23 @@ function renderChrome() {
         '</ul>' +
         '<div class="nav-cta">' +
           '<a class="btn btn-sm" href="booking.html">☕ Book a virtual coffee</a>' +
-          '<button class="menu-btn" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">☰</button>' +
+          '<button class="menu-btn" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>' +
         '</div>' +
       '</div>';
     var btn = document.getElementById("menu-btn"), links = document.getElementById("nav-links");
-    btn.addEventListener("click", function () {
-      var open = links.classList.toggle("open");
+    var setMenu = function (open) {
+      links.classList.toggle("open", open);
+      document.body.classList.toggle("menu-open", open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.setAttribute("aria-label", open ? "Close menu" : "Menu");
+    };
+    btn.addEventListener("click", function (e) { e.stopPropagation(); setMenu(!links.classList.contains("open")); });
+    links.addEventListener("click", function () { setMenu(false); });
+    document.addEventListener("click", function (e) {
+      if (links.classList.contains("open") && !header.contains(e.target)) setMenu(false);
     });
-    links.addEventListener("click", function () { links.classList.remove("open"); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
+    window.addEventListener("resize", function () { if (window.innerWidth > 720) setMenu(false); });
   }
 
   var footer = document.getElementById("site-footer");
@@ -131,6 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!posts.length) { latest.innerHTML = emptyPosts(); return; }
       var top = posts.slice(0, 5);
       latest.innerHTML = top.map(function (p, i) { return postCard(p, i === 0, posts.length === 1); }).join("");
+      if (window.SiteMotion) SiteMotion.scan(latest);
     }).catch(function () { latest.innerHTML = emptyPosts(); });
   }
 
@@ -145,6 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
           "<div><time datetime=\"" + esc(p.date) + "\">" + fmtDate(p.date) + "</time><h3>" + esc(p.title) + "</h3><p>" + esc(p.summary) + "</p></div>" +
           '<div class="tags">' + (p.tags || []).map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("") + "</div></a>";
       }).join("");
+      if (window.SiteMotion) SiteMotion.scan(list);
     }).catch(function () { list.outerHTML = emptyPosts("Couldn't load posts"); });
   }
 
@@ -178,6 +188,7 @@ function renderPost(article) {
           (meta.cover ? '<figure class="hero-img">' + coverHtml(meta) + "</figure>" : "") +
           '<div class="prose">' + html + "</div>";
         if (window.hljs) article.querySelectorAll("pre code").forEach(function (b) { hljs.highlightElement(b); });
+        if (window.SiteMotion) SiteMotion.scan(article);
       });
   }).catch(function () { fail("Couldn't load this post"); });
 }
