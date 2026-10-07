@@ -1,12 +1,23 @@
 [
   {
+    "slug": "6-hours-vs-3-rusty-exhaust-bolts",
+    "title": "6 Hours vs. 3 Rusty Exhaust Bolts: Lessons in Frontier Restoration",
+    "date": "2026-10-07",
+    "summary": "Restoring a Nissan Frontier requires love, patience, and a saw or two. Here is what six hours under a truck fighting 3 stubborn exhaust bolts and a bracket taught me.",
+    "tags": ["Frontier", "Restoration", "Hobbies"],
+    "readTime": "3 min read",
+    "cover": "img/static/6-hours-vs-3-rusty-exhaust-bolts/6-hours-vs-3-rusty-exhaust-bolts-cover.jpeg",
+    "emoji": "🔧",
+    "draft": false
+  },
+  {
     "slug": "learning-to-mig-weld",
     "title": "Learning to MIG weld after ten years away",
     "date": "2026-10-06",
     "summary": "After a decade of keyboards, I picked up a MIG welder again. Turns out welding and debugging have a lot in common.",
     "tags": ["Welding", "Hobbies"],
     "readTime": "3 min read",
-    "cover": "img/static/svack3y3jd.jpg",
+    "cover": "img/static/learning-to-mig-weld/svack3y3jd.jpg",
     "emoji": "🔥",
     "draft": false
   },

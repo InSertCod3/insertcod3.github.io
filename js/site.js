@@ -98,6 +98,36 @@ function loadPosts() {
   return _postsPromise;
 }
 
+/* ---------- Projects ---------- */
+var _projectsPromise = null;
+function loadProjects() {
+  if (!_projectsPromise) {
+    _projectsPromise = fetch("projects/index.json", { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error("projects/index.json " + r.status); return r.json(); })
+      .then(function (list) {
+        return list.filter(function (p) { return !p.draft; });
+      });
+  }
+  return _projectsPromise;
+}
+
+function projectCard(p) {
+  var tags = (p.tags || []).map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("");
+  var imageHtml = p.image
+    ? '<div class="cover"><img src="' + esc(p.image) + '" alt="" loading="lazy" onerror="this.remove()"></div>'
+    : '<div class="cover"><div class="cover-fallback">📦</div></div>';
+  return '<a class="card" target="_blank" rel="noopener" href="' + esc(p.url) + '">' +
+    imageHtml +
+    '<div class="card-body"><div class="tags">' + tags + "</div>" +
+    "<h3>" + esc(p.title) + "</h3>" +
+    "<p>" + esc(p.description) + "</p>" +
+    '<div class="meta"><span>View Project</span><span class="arrow">→</span></div></div></a>';
+}
+
+function emptyProjects(msg) {
+  return '<div class="empty"><b>' + (msg || "No projects yet") + "</b></div>";
+}
+
 function fmtDate(iso) {
   var d = new Date(iso + "T12:00:00");
   return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
@@ -141,6 +171,16 @@ document.addEventListener("DOMContentLoaded", function () {
       latest.innerHTML = top.map(function (p, i) { return postCard(p, i === 0, posts.length === 1); }).join("");
       if (window.SiteMotion) SiteMotion.scan(latest);
     }).catch(function () { latest.innerHTML = emptyPosts(); });
+  }
+
+  // Homepage: projects
+  var projectsGrid = document.getElementById("projects-grid");
+  if (projectsGrid) {
+    loadProjects().then(function (projects) {
+      if (!projects.length) { projectsGrid.innerHTML = emptyProjects(); return; }
+      projectsGrid.innerHTML = projects.map(projectCard).join("");
+      if (window.SiteMotion) SiteMotion.scan(projectsGrid);
+    }).catch(function () { projectsGrid.innerHTML = emptyProjects("Couldn't load projects"); });
   }
 
   // Blog index

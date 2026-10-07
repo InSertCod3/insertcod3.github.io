@@ -1,4 +1,4 @@
-![Learning to MIG weld](img/static/svack3y3jd.jpg)
+![Learning to MIG weld](img/static/learning-to-mig-weld/svack3y3jd.jpg)
 
 Plot twist: after a lot of time staring at screens, I picked up a welding gun. Specifically, a MIG welder. And I haven't touched one in about ten years.
 

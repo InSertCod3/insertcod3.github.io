@@ -1,0 +1,29 @@
+[
+  {
+    "slug": "table-read",
+    "title": "Table Read",
+    "url": "https://table-read-55417821289.us-east1.run.app/",
+    "description": "A web application for table read sessions.",
+    "tags": ["Web App", "Cloud Run"],
+    "image": "img/static/table-read.png",
+    "draft": false
+  },
+  {
+    "slug": "maydove",
+    "title": "Maydove",
+    "url": "https://maydove.com/",
+    "description": "Maydove - A modern web platform.",
+    "tags": ["Web Platform", "Product"],
+    "image": "img/static/maydove.png",
+    "draft": false
+  },
+  {
+    "slug": "krayla",
+    "title": "Krayla",
+    "url": "https://krayla.com/",
+    "description": "Krayla - A web application.",
+    "tags": ["Web App", "SaaS"],
+    "image": "img/static/krayla.png",
+    "draft": false
+  }
+]
