@@ -60,12 +60,6 @@ body.menu-open::after { opacity: 1; pointer-events: auto; }
 .hero > :nth-child(5) { animation-delay: .5s; }
 @keyframes rise { from { opacity: 0; transform: translate3d(0, 26px, 0); } }
 
-/* highlighter sweep behind "Write it down." */
-.hero h1 em {
-  background: linear-gradient(var(--tint), var(--tint)) no-repeat 0 0 / 0% 100%;
-  -webkit-box-decoration-break: clone; box-decoration-break: clone;
-  animation: sweep .9s var(--ease) .75s forwards;
-}
 @keyframes sweep { to { background-size: 100% 100%; } }
 
 /* live dot ping */

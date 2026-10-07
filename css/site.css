@@ -96,7 +96,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   font-size: clamp(40px, 7vw, 76px); line-height: 1.02; letter-spacing: -0.045em; font-weight: 800;
   margin: 18px auto 20px; max-width: 16ch; text-wrap: balance;
 }
-.hero h1 em { font-style: normal; background: var(--tint); padding: 0 .15em; border-radius: .2em; }
+.hero h1 em { font-style: normal; padding: 0 .15em; border-radius: .2em; }
 .hero p.lede { font-size: clamp(17px, 2vw, 20px); color: var(--ink-2); max-width: 54ch; margin: 0 auto 32px; }
 .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .hero-meta { margin-top: 28px; font-size: 13px; color: var(--muted); display: flex; gap: 8px 20px; justify-content: center; flex-wrap: wrap; }
