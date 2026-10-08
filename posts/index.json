@@ -1,4 +1,14 @@
 [
+    {
+    "slug": "hello-world",
+    "title": "Hello, world: why I'm starting a dev blog",
+    "date": "2026-10-09",
+    "summary": "What this blog is for, what I'll write about, and how to add new posts to this site.",
+    "tags": ["Meta"],
+    "readTime": "2 min read",
+    "emoji": "👋",
+    "draft": false
+  },
   {
     "slug": "organizing-basement-bins-with-ai",
     "title": "Building an AI Vision Storage App that saved me hours",
@@ -30,16 +40,6 @@
     "readTime": "3 min read",
     "cover": "img/static/learning-to-mig-weld/svack3y3jd.jpg",
     "emoji": "🔥",
-    "draft": false
-  },
-  {
-    "slug": "hello-world",
-    "title": "Hello, world: why I'm starting a dev blog",
-    "date": "2026-10-06",
-    "summary": "What this blog is for, what I'll write about, and how to add new posts to this site.",
-    "tags": ["Meta"],
-    "readTime": "2 min read",
-    "emoji": "👋",
     "draft": false
   }
 ]
