@@ -1,5 +1,16 @@
 [
   {
+    "slug": "organizing-basement-bins-with-ai",
+    "title": "Building an AI Vision Storage App that saved me hours",
+    "date": "2026-10-08",
+    "summary": "How I built an app using AI vision to scan items, auto-fill details, and keep track of everything in my basement storage bins without having to open them.",
+    "tags": ["AI", "Projects", "Software"],
+    "readTime": "5 min read",
+    "cover": "img/static/organizing-basement-bins-with-ai/08CDBF30-CD29-4A49-8784-61E0E3D1F85F-grain-4x-cover.webp",
+    "emoji": "📦",
+    "draft": false
+  },
+  {
     "slug": "6-hours-vs-3-rusty-exhaust-bolts",
     "title": "6 Hours vs. 3 Rusty Exhaust Bolts: Lessons in Frontier Restoration",
     "date": "2026-10-07",

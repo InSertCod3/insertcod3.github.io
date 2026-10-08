@@ -1,5 +1,14 @@
 [
   {
+    "slug": "Home Storage Tracker",
+    "title": "AI Storage Bin Tracker",
+    "url": "#",
+    "description": "An AI-powered mobile app built with Expo and React Native that uses vision recognition to automatically log, tag, and locate items inside storage bins.",
+    "tags": ["React Native", "AI Vision", "Expo", "TypeScript"],
+    "image": "img/static/organizing-basement-bins-with-ai/08CDBF30-CD29-4A49-8784-61E0E3D1F85F-grain-2x-app-cover.webp",
+    "draft": false
+  },
+  {
     "slug": "table-read",
     "title": "Table Read",
     "url": "https://table-read-55417821289.us-east1.run.app/",
