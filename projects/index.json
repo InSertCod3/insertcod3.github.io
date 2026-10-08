@@ -5,7 +5,7 @@
     "url": "https://table-read-55417821289.us-east1.run.app/",
     "description": "A web application for table read sessions.",
     "tags": ["Web App", "Cloud Run"],
-    "image": "img/static/table-read.png",
+    "image": "img/static/projects/table-read.png",
     "draft": false
   },
   {
@@ -14,7 +14,7 @@
     "url": "https://maydove.com/",
     "description": "Maydove - A modern web platform.",
     "tags": ["Web Platform", "Product"],
-    "image": "img/static/maydove.png",
+    "image": "img/static/projects/maydove.png",
     "draft": false
   },
   {
@@ -23,7 +23,7 @@
     "url": "https://krayla.com/",
     "description": "Krayla - A web application.",
     "tags": ["Web App", "SaaS"],
-    "image": "img/static/krayla.png",
+    "image": "img/static/projects/krayla.png",
     "draft": false
   }
 ]
