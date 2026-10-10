@@ -3,16 +3,25 @@
     "slug": "Home Storage Tracker",
     "title": "AI Storage Bin Tracker",
     "url": "#",
-    "description": "An AI-powered mobile app built with Expo and React Native that uses vision recognition to automatically log, tag, and locate items inside storage bins.",
+    "description": "Photograph a storage bin and AI vision logs and tags what's inside, so you can search for any item and find which bin it's in. Built with Expo and React Native.",
     "tags": ["React Native", "AI Vision", "Expo", "TypeScript"],
     "image": "img/static/organizing-basement-bins-with-ai/08CDBF30-CD29-4A49-8784-61E0E3D1F85F-grain-2x-app-cover.webp",
+    "draft": false
+  },
+  {
+    "slug": "Spool Space",
+    "title": "In-browser video to GIF, MP4, WebP editor",
+    "url": "https://github.com/InSertCod3/SpoolSpace",
+    "description": "Turn any video into a looping GIF, MP4, WebM, WebP or APNG without uploading it. Trim on a timeline, set the speed, and pick a look like Grain, Noir or VHS. Conversion runs entirely in the browser with ffmpeg.wasm.",
+    "tags": ["Next.js", "React", "TypeScript", "Tailwind CSS", "ffmpeg.wasm"],
+    "image": "img/static/projects/spoolspace.png",
     "draft": false
   },
   {
     "slug": "table-read",
     "title": "Table Read",
     "url": "https://table-read-55417821289.us-east1.run.app/",
-    "description": "A web application for table read sessions.",
+    "description": "Write or paste a story, then read it aloud while a Whisper speech model running on your own device follows along word by word. Nothing is uploaded, and optional sound-effect cues send ElevenLabs only short text prompts, never your audio.",
     "tags": ["Web App", "Cloud Run"],
     "image": "img/static/projects/table-read.png",
     "draft": false
@@ -21,7 +30,7 @@
     "slug": "maydove",
     "title": "Maydove",
     "url": "https://maydove.com/",
-    "description": "Maydove - A modern web platform.",
+    "description": "A map-first AI workspace for planning and generating ad creatives and social content for LinkedIn, Facebook and Instagram. Place an idea on a shared map, attach audience, proof and tone, and an AI agent drafts outputs that stay linked to it, with a visual editor for graphics and carousels.",
     "tags": ["Web Platform", "Product"],
     "image": "img/static/projects/maydove.png",
     "draft": false
@@ -30,8 +39,8 @@
     "slug": "krayla",
     "title": "Krayla",
     "url": "https://krayla.com/",
-    "description": "Krayla - A web application.",
-    "tags": ["Web App", "SaaS"],
+    "description": "Website for a mindfulness and yoga studio in Syracuse, NY. Visitors browse classes by intensity, meet the lead instructor, check a day-by-day schedule of classes and events, and book through Google Calendar appointments.",
+    "tags": ["Website", "Google Calendar", "Local Business"],
     "image": "img/static/projects/krayla.png",
     "draft": false
   }
